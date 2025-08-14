@@ -1,9 +1,10 @@
+import { Header } from "./header";
 
 
 function App() {
   return (
     <>
-    <h1>Trackfit</h1>
+    <Header   />
     </>
   );
 }
