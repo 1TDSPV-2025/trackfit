@@ -34,55 +34,43 @@ export function WorkoutForm({ onAdd }: WorkoutFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "80%",
-        alignItems: "center",
-        justifyContent: "center",
-        border: "1px solid #ccc",
-        gap: "0.5rem",
-      }}
+      className="bg-white shadow rounded-lg p-4 flex flex-col gap-3 w-4/5 mb-5"
     >
-      <label htmlFor="workout-title">Título do treino</label>
       <input
         type="text"
-        id="workout-title"
+        placeholder="Título do treino"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="título do treino"
+        className="border rounded p-2"
       />
-
-      <label htmlFor="workout-duration">Duração (min)</label>
       <input
         type="number"
-        id="workout-duration"
+        placeholder="Duração (min)"
         value={duration}
         onChange={(e) => setDuration(Number(e.target.value))}
-        placeholder="Duração (min)"
+        className="border rounded p-2"
       />
-
-      <label htmlFor="workout-intensity">Intensidade</label>
       <input
         type="number"
-        id="workout-intensity"
+        placeholder="Intensidade (1 a 5)"
         value={intensity}
-        onChange={(e) => setIntensity(Number(e.target.value) as Intensity)}
-        placeholder="Intensidade"
         min={1}
         max={5}
+        onChange={(e) => setIntensity(Number(e.target.value) as Intensity)}
+        className="border rounded p-2"
       />
-
-      <label htmlFor="workout-date">Dia de treino</label>
       <input
         type="date"
-        id="workout-date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        placeholder="Dia de treino"
+        className="border rounded p-2"
       />
-
-      <button type="submit">Adicionar treino</button>
+      <button
+        type="submit"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        Adicionar Treino
+      </button>
     </form>
   );
 }

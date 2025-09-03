@@ -7,28 +7,20 @@ interface WorkoutResumeProps {
 
 export function WorkoutResume({ workout }: WorkoutResumeProps) {
   return (
-    <div
-      style={{
-        marginTop: "0.5rem",
-        border: "1px solid #ccc",
-        width: "80%",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          alignItems: "center",
-        }}
-      >
-        <h2>{workout.title}</h2>
+    <div className="w-3/5 rounded-lg shadow px-3 py-4 flex flex-col gap-5 bg-white mb-3">
+      <div className="flex justify-between">
+        <h2 className="font-bold text-gray-600">{workout.title}</h2>
 
-        <Link to={`/workout/${workout.id}`} state={{ workout }}>
-          detalhes
+        <Link
+          to={`/workout/${workout.id}`}
+          state={{ workout }}
+          className="text-blue-600 font-bold hover:underline rounded border border-blue-600 p-2"
+        >
+          Detalhes
         </Link>
       </div>
 
-      <h3>{workout.date}</h3>
+      <h3>Dia: {workout.date}</h3>
     </div>
   );
 }
